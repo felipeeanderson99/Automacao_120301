@@ -12,6 +12,7 @@ namespace Automacao_120301
         public void Setup()
         {
             driver = new EdgeDriver();
+
             driver.Navigate().GoToUrl("https://www.leomadeiras.com.br/");
             driver.Manage().Window.Maximize();
 
@@ -19,7 +20,7 @@ namespace Automacao_120301
         }
 
         [Test]
-        public void CompraProduto()
+        public void ComprarProduto()
         {
 
             PageObject page = new PageObject();

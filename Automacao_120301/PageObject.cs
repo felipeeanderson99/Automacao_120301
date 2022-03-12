@@ -111,6 +111,7 @@ namespace Automacao_120301
             int valorDoPedidoFormatado = Int32.Parse(valorDoPedido);
 
             //Validando se o valor é maior que 15 mil
+
             Assert.IsTrue(valorDoPedidoFormatado > 15000);
         }
     }
