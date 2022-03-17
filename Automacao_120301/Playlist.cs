@@ -23,15 +23,16 @@ namespace Automacao_120301
         public void ComprarProduto()
         {
 
-            PageObject page = new PageObject();
+            PageObject page = new PageObject(driver);
 
-            page.aguardarCarregamentoDaTela(driver);
-            page.clickMenuTodasCategorias(driver);
-            page.MenuCompensados(driver);
-            page.ComprandoProduto(driver);
-            page.adicionandoAoCarrinho(driver);
-            page.cep(driver);
-            page.validandoPedido(driver);
+            page.aguardarCarregamentoDaTela();
+            page.clickMenuTodasCategorias();
+            page.MenuCompensados();
+
+            page.ComprandoProduto();
+            page.adicionandoAoCarrinho();
+            page.cep();
+            page.validandoPedido();
 
         }
 
