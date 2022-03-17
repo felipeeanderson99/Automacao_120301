@@ -9,9 +9,14 @@ using System.Threading;
 
 namespace Automacao_120301
 {
-    class PageObject
+    public class PageObject
     {
-        public void aguardarCarregamentoDaTela(IWebDriver driver)
+        private IWebDriver driver;
+        public PageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+        public void aguardarCarregamentoDaTela()
         {
             Thread.Sleep(1500);
 
@@ -25,7 +30,7 @@ namespace Automacao_120301
 
         }
 
-        public void clickMenuTodasCategorias(IWebDriver driver)
+        public void clickMenuTodasCategorias()
         {
 
             IWebElement btnVoltarCategorias = driver.FindElement
@@ -37,7 +42,7 @@ namespace Automacao_120301
         }
 
 
-        public void MenuCompensados(IWebDriver driver)
+        public void MenuCompensados()
         {
 
             IWebElement menuMadeiras = driver.FindElement
@@ -52,7 +57,7 @@ namespace Automacao_120301
 
         }
 
-        public void ComprandoProduto(IWebDriver driver)
+        public void ComprandoProduto()
         {
             //Descendo o Scroll
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
@@ -73,7 +78,7 @@ namespace Automacao_120301
             Thread.Sleep(3500);
 
         }
-        public void adicionandoAoCarrinho(IWebDriver driver)
+        public void adicionandoAoCarrinho()
         {
             //carinho
             driver.FindElement(By.XPath("/html/body/div[4]/header/div/div/div/div/div/div[2]/div[1]/div/div[5]/div/div/span[1]")).Click();
@@ -85,7 +90,7 @@ namespace Automacao_120301
 
         }
 
-        public void cep(IWebDriver driver)
+        public void cep()
         {
             driver.FindElement(By.XPath("//input[@placeholder='Insira seu CEP']")).SendKeys("13015904");
             Thread.Sleep(1000);
@@ -96,7 +101,7 @@ namespace Automacao_120301
             executor.ExecuteScript("arguments[0].click();", btnConfirmar);
             Thread.Sleep(1000);
         }
-        public void validandoPedido(IWebDriver driver)
+        public void validandoPedido()
         {
             string valorDoPedido = driver.FindElement(By.XPath("/html/body/div[4]/main/div[1]/div[1]/div/div[1]/" +
                 "div[2]/div[1]/div[1]/div[2]/div/div[4]/div/div")).Text;
